@@ -1,0 +1,26 @@
+.daily-warpper{
+    color: white;
+    font-weight: 700;
+    margin-top: 5%;
+    
+}
+.daily-warpper p{
+    text-align: start;
+    padding: 0 100px;
+}
+.daily-list{
+    background-color: #20293A;
+    display: flex;
+    list-style: none;
+    border: 2px solid;
+    justify-content: center;
+    border: none;
+    width: 90vw;
+    border-radius: 50px;
+    margin: 15px auto;
+}
+.daily-list li{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}

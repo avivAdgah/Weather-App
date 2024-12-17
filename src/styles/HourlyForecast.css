@@ -1,0 +1,32 @@
+.hourly-warpper{
+    display: flex;
+    width: 70%;
+    color: white;
+    justify-content: space-evenly;
+}
+
+.weather-list{
+    border: none;
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+    border-radius: 30px;
+    background-color: #20293A;
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+}
+
+.weather-list li{
+    margin: 15px 0;
+}
+.weather-list .image{
+    display: flex;
+    align-items: center;
+}
+.weather-list .image span{
+    font-size: 15px;
+}

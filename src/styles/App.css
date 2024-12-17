@@ -1,0 +1,30 @@
+.warpper{
+    text-align: center;
+    background-image: url('../src/assets/globe-296471.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #030617;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+input{
+    background-color: #20293A;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    padding: 10px;
+    font-family: "Montserrat", serif;
+}
+.warpper .first-section{
+    display: flex;
+    justify-content: space-around;
+}
