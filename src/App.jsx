@@ -7,6 +7,7 @@ import WeatherLocation from "./WeatherLocation";
 import HourlyForecast from './HourlyForecast'
 import DailyForecast from "./DailyForecast";
 import MaterialUISwitch from "./MaterialUISwitch ";
+import Footer from "./Footer";
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -65,10 +66,11 @@ export default function App() {
             <HourlyForecast data={data.forecast.forecastday[0].hour} isChecked={isChecked}/>
         </div>
           <DailyForecast data={data.forecast.forecastday} isChecked={isChecked}/>
+          <Footer isChecked={isChecked}/>
         </>
       ) : (
-        <Box sx={{marginTop:'10em' }}>
-          <CircularProgress />
+        <Box sx={{height:'100vh' }}>
+          <CircularProgress sx={{marginTop:'10em' }}/>
         </Box>
       )}
     </div>

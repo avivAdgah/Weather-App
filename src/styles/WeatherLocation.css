@@ -2,7 +2,7 @@
     border: 2px solid;
     display: flex;
     width: 25%;
-    background-color: #6d6d6e;
+    background-color: #838383;
     color: white;
     border-radius: 50px;
     border: none;
@@ -24,3 +24,15 @@
     text-decoration: underline;
     font-weight: 700;
 }
+@media only screen and (max-width: 768px) {
+    .current-warpper{
+        width: 90vw;
+        margin-bottom: 50px;
+    }
+    .first-section span,p{
+        font-size: 15px;
+    }
+    .second-section p{
+        font-size: 15px;
+    }
+  }

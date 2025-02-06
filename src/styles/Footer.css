@@ -1,0 +1,9 @@
+.footer{
+    color: white;
+}
+.footer-text{
+    font-size:x-small;
+    padding: 10px 0;
+    margin: auto;
+    border-radius: 5px;
+}

@@ -1,6 +1,6 @@
 .warpper{
     text-align: center;
-    background-image: url('../src/assets/globe-296471.svg');
+    background-image: url('images/globe-296471.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,8 +23,18 @@ input{
     font-size: 15px;
     padding: 10px;
     font-family: "Montserrat", serif;
+    text-align: center;
 }
 .warpper .first-section{
     display: flex;
     justify-content: space-around;
 }
+
+@media only screen and (max-width: 768px) {
+    .first-section{
+        flex-direction: column;
+    }
+    .first-section img{
+        font-size: 50px;
+    }
+  }

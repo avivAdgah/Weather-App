@@ -30,3 +30,12 @@
 .weather-list .image span{
     font-size: 15px;
 }
+
+@media only screen and (max-width: 768px) {
+    .hourly-warpper{
+        flex-direction: column;
+    }
+    .weather-list{
+        width: 90vw;
+    }
+  }

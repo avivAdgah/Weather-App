@@ -2,7 +2,6 @@
     color: white;
     font-weight: 700;
     margin-top: 5%;
-    
 }
 .daily-warpper p{
     text-align: start;
@@ -24,3 +23,9 @@
     display: flex;
     align-items: center;
 }
+@media only screen and (max-width: 768px) {
+    .daily-list{
+        width: 85vw;
+    }
+
+  }
