@@ -1,0 +1,52 @@
+.hourly-forecast {
+  margin-top: var(--space-5);
+}
+
+.section-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+.hourly-scroll {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--space-2);
+}
+
+.hourly-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 76px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-3) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.hourly-card.is-now {
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1.5px var(--accent) inset;
+}
+
+.hourly-time {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.hourly-card img {
+  width: 36px;
+  height: 36px;
+}
+
+.hourly-temp {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
