@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDebouncedValue } from "../hooks/useDebouncedValue";
 import ThemeToggle from "./ThemeToggle";
+import UnitToggle from "./UnitToggle";
 import "../styles/Header.css";
 
-export default function Header({ onCityChange, theme, onToggleTheme }) {
+export default function Header({
+  onCityChange,
+  theme,
+  onToggleTheme,
+  unit,
+  onUnitChange,
+}) {
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebouncedValue(query, 500);
 
@@ -35,7 +42,10 @@ export default function Header({ onCityChange, theme, onToggleTheme }) {
         />
       </form>
 
-      <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+      <div className="header-actions">
+        <UnitToggle unit={unit} onToggle={onUnitChange} />
+        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+      </div>
     </header>
   );
 }

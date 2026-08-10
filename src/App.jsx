@@ -14,8 +14,9 @@ import "./styles/base.css";
 import "./styles/App.css";
 
 export default function App() {
-  const [city, setCity] = useState("Tel Aviv");
+  const [city, setCity] = useState("Jerusalem");
   const [theme, setTheme] = useState("light");
+  const [unit, setUnit] = useState("metric");
   const { data, status, errorMessage, retry } = useWeather(city);
 
   const handleCityChange = useCallback((nextCity) => setCity(nextCity), []);
@@ -30,6 +31,8 @@ export default function App() {
         onCityChange={handleCityChange}
         theme={theme}
         onToggleTheme={setTheme}
+        unit={unit}
+        onUnitChange={setUnit}
       />
 
       {status === "loading" && !data && <Loader />}
@@ -44,18 +47,12 @@ export default function App() {
             <CurrentWeather
               location={data.location.name}
               localtime={data.location.localtime}
-              tempC={data.current.temp_c}
               icon={data.current.condition.icon}
               conditionText={data.current.condition.text}
-              feelsLikeC={data.current.feelslike_c}
+              current={data.current}
+              unit={unit}
             />
-            <WeatherDetails
-              windKph={data.current.wind_kph}
-              humidity={data.current.humidity}
-              visibilityKm={data.current.vis_km}
-              uv={data.current.uv}
-              pressureMb={data.current.pressure_mb}
-            />
+            <WeatherDetails current={data.current} unit={unit} />
           </div>
 
           {status === "error" && <ErrorState message={errorMessage} />}
@@ -63,8 +60,9 @@ export default function App() {
           <HourlyForecast
             hours={data.forecast.forecastday[0].hour}
             localtime={data.location.localtime}
+            unit={unit}
           />
-          <DailyForecast days={data.forecast.forecastday} />
+          <DailyForecast days={data.forecast.forecastday} unit={unit} />
         </main>
       )}
 

@@ -1,7 +1,8 @@
 import { formatHourLabel, getHourOfDay } from "../utils/formatTime";
 import "../styles/HourlyForecast.css";
 
-export default function HourlyForecast({ hours, localtime }) {
+export default function HourlyForecast({ hours, localtime, unit }) {
+  const isImperial = unit === "imperial";
   const currentHour = getHourOfDay(localtime);
   const remainingHours = hours.filter(
     (hour) => getHourOfDay(hour.time) >= currentHour
@@ -13,6 +14,7 @@ export default function HourlyForecast({ hours, localtime }) {
       <div className="hourly-scroll">
         {remainingHours.map((hour) => {
           const isNow = getHourOfDay(hour.time) === currentHour;
+          const temp = isImperial ? hour.temp_f : hour.temp_c;
           return (
             <div
               key={hour.time}
@@ -22,7 +24,7 @@ export default function HourlyForecast({ hours, localtime }) {
                 {isNow ? "Now" : formatHourLabel(hour.time)}
               </span>
               <img src={hour.condition.icon} alt={hour.condition.text} />
-              <span className="hourly-temp">{Math.round(hour.temp_c)}°</span>
+              <span className="hourly-temp">{Math.round(temp)}°</span>
             </div>
           );
         })}

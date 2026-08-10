@@ -1,18 +1,23 @@
 import "../styles/WeatherDetails.css";
 
-export default function WeatherDetails({
-  windKph,
-  humidity,
-  visibilityKm,
-  uv,
-  pressureMb,
-}) {
+export default function WeatherDetails({ current, unit }) {
+  const isImperial = unit === "imperial";
+  const wind = isImperial
+    ? `${Math.round(current.wind_mph)} mph`
+    : `${Math.round(current.wind_kph)} km/h`;
+  const visibility = isImperial
+    ? `${current.vis_miles} mi`
+    : `${current.vis_km} km`;
+  const pressure = isImperial
+    ? `${current.pressure_in} in`
+    : `${current.pressure_mb} mb`;
+
   const details = [
-    { icon: "fa-wind", label: "Wind", value: `${windKph} km/h` },
-    { icon: "fa-droplet", label: "Humidity", value: `${humidity}%` },
-    { icon: "fa-eye", label: "Visibility", value: `${visibilityKm} km` },
-    { icon: "fa-sun", label: "UV Index", value: uv },
-    { icon: "fa-gauge", label: "Pressure", value: `${pressureMb} mb` },
+    { icon: "fa-wind", label: "Wind", value: wind },
+    { icon: "fa-droplet", label: "Humidity", value: `${current.humidity}%` },
+    { icon: "fa-eye", label: "Visibility", value: visibility },
+    { icon: "fa-sun", label: "UV Index", value: current.uv },
+    { icon: "fa-gauge", label: "Pressure", value: pressure },
   ];
 
   return (

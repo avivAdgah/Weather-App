@@ -1,0 +1,23 @@
+.unit-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.unit-toggle-option {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 999px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.unit-toggle-option.is-active {
+  background: var(--accent);
+  color: #fff;
+}

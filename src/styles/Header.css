@@ -21,6 +21,12 @@
   align-items: center;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .search-icon {
   position: absolute;
   left: var(--space-3);
